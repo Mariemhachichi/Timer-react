@@ -2,6 +2,7 @@ import React from 'react';
 import Time from './time'
 import Inpt from './input'
 import Timer from './timer'
+import Convert from './composantes/test'
 import './App.css'
 
 class App extends React.Component {
@@ -12,6 +13,7 @@ class App extends React.Component {
     render() {
       return (
         <div>
+            <Convert />
         <h1>Time input</h1>
         <Inpt />
         <Time
