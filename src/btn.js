@@ -1,8 +1,8 @@
+
 import React, {Component} from 'react'
-import Time from './time'
+import Chro from './composantes/chrono'
 
-
-class Timer extends Component {
+class Btn extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -10,7 +10,6 @@ class Timer extends Component {
         }
         this.start = this.start.bind(this)
         this.pause = this.pause.bind(this)
-        this.reset = this.pause.bind(this)
     }
     start () {
         if(this.state.interval) {
@@ -37,13 +36,9 @@ class Timer extends Component {
             interval: undefined
         })
     }
-    reset () {
-        clearInterval(this.state.interval)
-        this.setState(0)
-    }
     render() {
-        return <div>
-            <Time ms={this.state.timeMs} />
+        return <div className="btn">
+            <Chro ms={this.state.timeMs} />
             <input
                 type="button"
                 value="Start"
@@ -52,12 +47,8 @@ class Timer extends Component {
                 type="button"
                 value="Pause"
                 onClick={this.pause} />
-             <input
-                type="button"
-                value="reset"
-                onClick={this.reset} />
         </div>
     }
 }
 
-export default Timer
+export default Btn

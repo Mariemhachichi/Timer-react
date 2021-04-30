@@ -1,27 +1,19 @@
 import React from 'react';
-import Time from './time'
-import Inpt from './input'
-import Timer from './timer'
-import Convert from './composantes/test'
 import './App.css'
+import Timer from './composantes/timer';
+import Btn from './btn';
 
 class App extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {ms: 0};
-    }
+
     render() {
       return (
-        <div>
-            <Convert />
-        <h1>Time input</h1>
-        <Inpt />
-        <Time
-          ms={this.state.ms}
-          onChange={ms => this.setState({ms})}
-        />
-        <p>Seconds: <strong>{this.state.ms}</strong></p>
-        <Timer />
+        <div className="cover">
+          <div className="flex">
+          <h1>Timer</h1>
+          <Timer />
+          <Btn />
+          </div>
+           
       </div>
       );
     }
